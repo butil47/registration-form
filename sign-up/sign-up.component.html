@@ -1,0 +1,74 @@
+
+    <div class="row">
+    <div class="col s8 offset-s1">
+        <div class="card">
+            <div class="sm-jumbotron center-align">
+                <h2>User Registration</h2>
+           </div>
+           <form  class="col s12 white" #UserRegistrationForm="ngForm" >
+            <div class="row">
+                <div class="form-group" >
+                    <p>{{User.FirstName}}</p>
+                    <div class="input-field col s4">
+                    <input  type="text" class="validate" name="FirstName" #FirstName="ngModel" [(ngModel)]="user!.FirstName" required>
+                    <label class="fn" data-error="Required Field!">First Name</label>
+                </div></div>
+                <div class="form-group">
+                    <div class="input-field col s4" >
+                    <input type="text" class="validate" name="MiddleName" #MiddleName="ngModel" [(ngModel)]="user!.MiddleName" required>
+                    <label class="mn" data-error="Required Field!">Middle Name</label>
+            </div></div>
+                <div class="form-group">
+                    <div class="input-field col s4" >
+                    <input type="text" class="validate" name="LastName" #LastName="ngModel" [(ngModel)]="user!.LastName" required>
+                    <label class="ln" data-error="Required Field!">Last Name</label>
+            </div></div>
+            </div>
+            <div class="row">
+                    <div class="radio-group">
+                    <label> <input type="radio" name="Gender" value="Male" #gender="ngModel" [(ngModel)]="user!.Gender" >
+                        <span>Male</span>
+                        </label> 
+                        <label> <input type="radio" name="Gender" value="Female" [(ngModel)]="user!.Gender" >
+                            <span>Female</span>
+                            </label>  </div></div>
+                            
+                        
+                            <div class="form-group">
+            <div class="row"> 
+                 <div class="input-field col s8">
+                     <input type="text" class="validate" name="BirthDay" #BirthDay="ngModel" [(ngModel)]="user!.BirthDay" required> 
+                     <label data-error="Required Field!">Birthday</label>
+                     </div> </div> </div>
+                     <div class="form-group">
+            <div class="row">
+                <div class="input-field col s8">
+                    <input type="text" class="validate" Name="Email" type="text" name="Email" #Email="ngModel" [(ngModel)]="user!.Email" [pattern]="emailPattern" required>
+                    <label data-error="Invalid email">Email</label>
+                    
+                </div>
+            </div></div>
+            <div class="form-group">
+            <div class="state">
+                <select class="browser-default">
+                  <option value="" disabled selected></option>
+                  <option value="1">canada</option>
+                  <option value="2">ethiopia</option>
+                  <option value="3">kenya</option>
+                  <option value="4">unitedkingdom</option>
+                </select>
+                <label data-error="Required Field!">select county</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="inpute-field col s12">
+                    <button class="btn-large btn-submit" [disabled]="!UserRegistrationForm.valid" type="submit">submit</button>
+                </div>
+            </div>
+            
+        
+    </form>
+        </div>
+    </div>
+</div>
+  
